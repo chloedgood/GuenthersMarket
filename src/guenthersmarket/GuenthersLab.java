@@ -55,6 +55,36 @@ public class GuenthersLab {
 	                    + entry.getValue());
 	        }
 	    }
+	private static void averageCost() {  //average cost of all ordered items
+        double averageValue = 0;
+        double sum = 0;
+        for (int i = 0; i < orderPrices.size(); i++) {
+            sum += orderPrices.get(i);
+            averageValue = sum / orderPrices.size();
+        }
+        System.out.println("Average price per item in order was " + averageValue);
+    }
+
+    private static void highestCost() { //looking for highest priced item in arraylist
+        double highestCost = orderPrices.get(0);
+        for (int i = 1; i < orderPrices.size(); i++) {
+            double curValue = orderPrices.get(i);
+            if (curValue > highestCost) {
+                highestCost = curValue;
+            }
+        }
+        System.out.println("Your highest cost item is " + highestCost);
+    }
+    private static void lowestCost(){
+        double lowestCost = orderPrices.get(0);
+        for (int i = 1; i < orderPrices.size(); i++) {
+            double curValue = orderPrices.get(i);
+            if (curValue < lowestCost) {
+                lowestCost = curValue;
+            }
+        }
+        System.out.println("Your lowest cost item is " + lowestCost);
+    }
 	 
 	 private static boolean itemExist(String itemName) { 
 	            if (items.get(itemName) == null) {
